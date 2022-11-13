@@ -21,6 +21,7 @@ func (s Server) Run() error {
 
 	app := fiber.New()
 
+	//Just for waiting pg up can be removed
 	time.Sleep(time.Second * 2)
 
 	// Connect to postgres

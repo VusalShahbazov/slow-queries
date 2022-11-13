@@ -23,7 +23,7 @@ func (r *SlowQueriesRepository) GetQueries(ctx context.Context, filter slow_quer
 
 	query := r.db.WithContext(ctx).Model(&domains.SlowQuery{})
 	if filter.Type != "" {
-		query = query.Where("query like ?", filter.Type+"%")
+		query = query.Where("lower(query) like lower(?)", filter.Type+"%")
 	}
 
 	err := query.Count(&total).Error
