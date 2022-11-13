@@ -21,7 +21,7 @@ func (s Server) Run() error {
 
 	app := fiber.New()
 
-	time.Sleep(time.Second * 3)
+	time.Sleep(time.Second * 2)
 
 	// Connect to postgres
 	db, err := postgres.Connect(s.DBHost, s.DBPort, s.DBUser, s.DBPassword, s.DBName)
