@@ -6,7 +6,7 @@ services:
     env_file:
       - .env
     ports:
-      - "8081:8080"
+      - "8080:8080"
 
   postgres:
     image: postgres:11.5-alpine
